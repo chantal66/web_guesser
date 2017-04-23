@@ -1,6 +1,20 @@
 <html>
-<head></head>
+<head>
+  <style>
+    body {
+      background: <%= css_color %>
+    }
+  </style>
+</head>
 <body>
-<p>The SECRET NUMBER IS <%= number %></p>
+  	<% if cheat_mode == "true" %>
+  		<p>You are playing in Cheat mode. The secret number is <%= SECRET_NUMBER %></p>
+  	<% end %>
+  	<form>
+		  <input type='text' name='guess' />
+		  <input type='submit' value='Guess!' />
+		</form>
+		<p>Guesses remaining: <%= count %></p>
+     <%= message %>
 </body>
 </html>
